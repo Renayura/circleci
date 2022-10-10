@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: renayura/archlinux:latest
+
+    resource_class: large
+    steps:
+      - checkout
+      - run:
+          name: Build-Kernel
+          command: |
+            git clone --depth=1 https://github.com/Renayura/kernel_xiaomi_mt6768 kernel
+            cd kernel
+            wget https://raw.githubusercontent.com/Renayura/Scripts/master/kernel-build.sh
+            bash kernel-build.sh clang
