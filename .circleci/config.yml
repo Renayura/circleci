@@ -14,4 +14,4 @@ jobs:
             git clone --depth=1 https://github.com/Renayura/kernel_xiaomi_mt6768 kernel
             cd kernel
             wget https://raw.githubusercontent.com/Renayura/Scripts/master/kernel-build.sh
-            bash kernel-build.sh clang
+            bash kernel-build.sh clang full-lto
